@@ -1,0 +1,14 @@
+.button {
+	display: flex;
+	/* flex-direction: row; */
+	justify-content: center;
+	align-items: center;
+	/* align-items: center; */
+	background: linear-gradient(178.24deg, #ffdcab -28.71%, #ffb34e 125.21%);
+	border-radius: 7px;
+	border: none;
+}
+
+.button:hover {
+	background: linear-gradient(178.24deg, #ffe8c7 -28.71%, #ffc67b 125.21%);
+}

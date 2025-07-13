@@ -1,0 +1,1 @@
+export { NewProductsBlock } from './block'

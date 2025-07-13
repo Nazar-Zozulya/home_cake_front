@@ -1,0 +1,20 @@
+/* Для WebKit-браузеров (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+	width: 0px; /* убирает вертикальный скроллбар */
+	height: 0px; /* убирает горизонтальный скроллбар */
+	background: transparent; /* убирает фон */
+}
+
+::-webkit-scrollbar-thumb {
+	background: transparent; /* прозрачный ползунок */
+}
+
+::-webkit-scrollbar-track {
+	background: transparent; /* прозрачный трек */
+}
+
+/* Для Firefox */
+* {
+	scrollbar-width: none; /* отключает скроллбар */
+	scrollbar-color: transparent transparent; /* прозрачный ползунок и трек */
+}

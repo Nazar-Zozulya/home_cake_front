@@ -1,0 +1,38 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 0px;
+	isolation: isolate;
+	width: 100%;
+	gap: 20px;
+	padding-top: 80px;
+
+}
+
+.bg {
+	position: absolute;
+	width: 100%;
+	z-index: -1;
+	top: 100vh;
+}
+
+.title {
+	font-family: "Jost";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 64px;
+	text-align: center;
+	color: #0f0202;
+}
+
+.allProducts {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: flex-start;
+	align-content: center;
+	gap: 50px;
+	width: 100%;
+}

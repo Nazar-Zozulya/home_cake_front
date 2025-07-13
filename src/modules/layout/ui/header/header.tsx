@@ -1,25 +1,29 @@
 import { Link } from "react-router-dom"
 import styles from "./header.module.css"
+import { NavigationButton } from "../../../../ui/navigationButton"
 
 export function Header() {
 	return (
 		<div className={styles.container}>
+            {/* <img src="/assets/images/bg.jpg" alt="" className={styles.bgImage} />   bg image */}
 			<div className={styles.navigationBlock}>
                 <div className={styles.pageNavigation}>
-                    <button className={styles.navButton}>Home Cake</button>
-                    <button className={styles.navButton}>Новинки</button>
-                    <button className={styles.navButton}>Наші переваги</button>
-                    <button className={styles.navButton}>Асортимент</button>
-                    <button className={styles.navButton}>Про нас</button>
+                    <NavigationButton variant="big" title="Home Cake" onClick={() => {}} />
+                    <div className={styles.navigationLinks}>
+                        <NavigationButton title="Новинки" onClick={() => {}} />
+                        <NavigationButton title="Наші переваги" onClick={() => {}} />
+                        <NavigationButton title="Асортимент" onClick={() => {}} />
+                        <NavigationButton title="Про нас" onClick={() => {}} />
+                    </div>
                 </div>
                 <div className={styles.orderNavigation}>
-                    <button className={styles.navButton}>Власне замовлення</button>
-                    <button className={styles.navButton}>Кошик</button>
+                    <NavigationButton title="Власне замовлення" onClick={() => {}} />
+                    <NavigationButton title="Кошик" onClick={() => {}} />
                 </div>
             </div>
 
 			<div className={styles.logoBlock}>
-                <img src="/logo.png" alt="Logo" className={styles.logo} />
+                <img src="/assets/images/logo.png" alt="Logo" className={styles.logo} />
                 <p className={styles.logoText}>Home Cake</p>
             </div>
 		</div>

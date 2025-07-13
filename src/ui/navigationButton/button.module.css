@@ -1,0 +1,25 @@
+.button {
+	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+.text {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+	background: linear-gradient(101.41deg, #dec09b 7.84%, #e0cb6a 102.88%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0px 0px 5px rgba(184, 158, 75, 0.6);
+}
+
+.textBig {
+    font-size: 28px !important;
+}
+
+.textSmall {
+    font-size: 16px !important;
+}
