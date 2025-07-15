@@ -1,0 +1,1 @@
+export { AssortmentBlock } from './block'

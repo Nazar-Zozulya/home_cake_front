@@ -32,14 +32,18 @@ const products: Product[] = [
 	},
 ]
 
-
-export function NewProductsBlock() {
+export function AssortmentBlock() {
 	return (
 		<div className={styles.container}>
-			<img src="/assets/images/newProducts.jpg" alt="" className={styles.bg}  />
-			<p className={styles.title}>Наші Новинки</p>
-			<div className={styles.allProducts}>
-				{ products.map((product) => {
+			<img
+				src="/assets/images/assortment.jpg"
+				className={styles.image}
+				alt=""
+			/>
+			<p className={styles.title}>Наш асортимент</p>
+
+			<div className={styles.productsList}>
+				{products.map((product) => {
 					return (
 						<ProductCard
 							key={product.id}
@@ -54,6 +58,8 @@ export function NewProductsBlock() {
 					)
 				})}
 			</div>
+
+			<button className={styles.showAll}>Показати всі</button>
 		</div>
 	)
 }
