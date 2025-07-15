@@ -1,4 +1,4 @@
-import { AssortmentBlock, NewProductsBlock, UsBenefitsBlock } from "../../modules/mainPageBlocks";
+import { AboutUsBlock, AssortmentBlock, NewProductsBlock, UsBenefitsBlock } from "../../modules/mainPageBlocks";
 
 export function MainPage() {
     return (
@@ -6,6 +6,7 @@ export function MainPage() {
             <NewProductsBlock />
             <UsBenefitsBlock />
             <AssortmentBlock />
+            <AboutUsBlock />
         </div>
     )
 }
