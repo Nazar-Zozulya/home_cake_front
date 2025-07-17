@@ -1,0 +1,86 @@
+.container {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding: 40px 10px;
+	gap: 10px;
+	width: 100%;
+	/* height: 356px; */
+	background: #1b1e23;
+}
+
+.logo {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.logoImg {
+	height: 140px;
+}
+
+.logoText {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 35px;
+	background: linear-gradient(101.41deg, #dec09b 7.84%, #e0cb6a 102.88%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0px 0px 5px rgba(184, 158, 75, 0.6);
+}
+
+.navigation {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding: 0px 10px;
+	gap: 20px;
+	height: 100%;
+	/* box-shadow: 0px 0px 14px 20px #000000; */
+	/* border-radius: 5px; */
+}
+
+.contacts {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding: 0px 10px;
+	gap: 10px;
+}
+
+.contactTitle {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 24px;
+	background: linear-gradient(101.41deg, #dec09b 7.84%, #e0cb6a 102.88%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0px 0px 5px rgba(184, 158, 75, 0.6);
+}
+
+.contactBlock {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+}
+
+.contactText {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 22px;
+	background: linear-gradient(101.41deg, #dec09b 7.84%, #e0cb6a 102.88%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-clip: text;
+	text-shadow: 0px 0px 5px rgba(184, 158, 75, 0.6);
+}
