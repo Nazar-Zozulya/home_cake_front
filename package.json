@@ -13,6 +13,7 @@
 		"@types/react-dom": "^19.1.6",
 		"clsx": "^2.1.1",
 		"dotenv": "^17.2.0",
+		"lodash": "^4.17.21",
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"react-router-dom": "^7.6.3",
@@ -43,5 +44,8 @@
 			"last 1 firefox version",
 			"last 1 safari version"
 		]
+	},
+	"devDependencies": {
+		"@types/lodash": "^4.17.20"
 	}
 }
