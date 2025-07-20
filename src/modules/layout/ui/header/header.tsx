@@ -1,8 +1,13 @@
 import { Link } from "react-router-dom"
 import styles from "./header.module.css"
 import { NavigationButton } from "../../../../ui/navigationButton"
+import { useCartStore } from "../../../cart"
+import { useModalManagerStore } from "../../../../store"
 
 export function Header() {
+
+	const openModal = useModalManagerStore((state) => state.openModal)
+
 	return (
 		<div className={styles.container} id="header">
 			{/* <img src="/assets/images/bg.jpg" alt="" className={styles.bgImage} />   bg image */}
@@ -72,7 +77,7 @@ export function Header() {
 						title="Власне замовлення"
 						onClick={() => {}}
 					/>
-					<NavigationButton title="Кошик" onClick={() => {}} />
+					<NavigationButton title="Кошик" onClick={() => {openModal("cart")}} />
 				</div>
 			</div>
 

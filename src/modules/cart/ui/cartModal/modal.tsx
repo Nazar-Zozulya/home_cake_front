@@ -1,15 +1,38 @@
 
+import { CloseModalButton } from "../../../../components/closeModalButton";
 import { Modal } from "../../../../components/modal";
-
+import { useModalManagerStore } from "../../../../store";
+import { useCartStore } from "../../store/useCartStore";
+import styles from './modal.module.css'
 
 
 
 
 export function CartModal() {
+    const cartItems = useCartStore((state) => state.cartItems)
+    const closeModal = useModalManagerStore((state) => state.closeModal)
+
     return (
         <Modal>
-            <div>
-
+            <div className={styles.container}>
+                <div className={styles.header}>
+                    <p className={styles.title}>Кошик</p>
+                    <CloseModalButton />
+                </div>
+                <div className={styles.content}>
+                    { cartItems.map((item) => {
+                        return(
+                            <div>{item.id} {item.count}</div>
+                        )
+                    }) }
+                </div>
+                <div className={styles.footer}>
+                    <button className={styles.continueShopping}><p className={styles.continueShoppingText} onClick={() => {closeModal()}} >Продовжити покупки</p></button>
+                    <div className={styles.totalSumBlock}>
+                        <div className={styles.totalSumText}>10000 $</div>
+                        <button className={styles.buyButton}><p className={styles.buyButtonText}>Замовити</p></button>
+                    </div>
+                </div>
             </div>
         </Modal>
     )
