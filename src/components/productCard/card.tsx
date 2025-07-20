@@ -1,5 +1,6 @@
+import { AddToCartButton } from '../../modules/cart';
 import { Product } from '../../modules/product';
-import { AddToCartButton } from '../addToCartButton';
+// import { AddToCartButton } from '../addToCartButton';
 import  styles  from './card.module.css';
 
 
@@ -16,7 +17,7 @@ export function ProductCard(props: Product) {
             </div>
             <div className={styles.secondInfo}>
                 <p className={styles.description}>{props.composition}</p>
-                <AddToCartButton id={1} />
+                <AddToCartButton id={props.id} />
             </div>
 
             <div className={styles.thirdInfo}>

@@ -6,7 +6,7 @@ import styles from './block.module.css'
 
 export function UsBenefitsBlock() {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="usBenefitsBlock">
             <img className={styles.image} src="assets/images/usBefenits.jpg" alt="" />
             <div className={styles.block}>
                 <p className={styles.title}>Наші переваги</p>

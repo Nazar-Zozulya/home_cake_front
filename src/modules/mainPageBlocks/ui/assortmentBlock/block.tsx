@@ -8,7 +8,7 @@ export function AssortmentBlock() {
 	const randomProducts: Product[] = sampleSize(products, 3)
 
 	return (
-		<div className={styles.container}>
+		<div className={styles.container} id="assortmentBlock">
 			<img
 				src="/assets/images/assortment.jpg"
 				className={styles.image}

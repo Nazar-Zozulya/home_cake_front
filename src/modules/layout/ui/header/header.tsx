@@ -4,28 +4,86 @@ import { NavigationButton } from "../../../../ui/navigationButton"
 
 export function Header() {
 	return (
-		<div className={styles.container}>
-            {/* <img src="/assets/images/bg.jpg" alt="" className={styles.bgImage} />   bg image */}
+		<div className={styles.container} id="header">
+			{/* <img src="/assets/images/bg.jpg" alt="" className={styles.bgImage} />   bg image */}
 			<div className={styles.navigationBlock}>
-                <div className={styles.pageNavigation}>
-                    <NavigationButton variant="big" title="Home Cake" onClick={() => {}} />
-                    <div className={styles.navigationLinks}>
-                        <NavigationButton title="Новинки" onClick={() => {}} />
-                        <NavigationButton title="Наші переваги" onClick={() => {}} />
-                        <NavigationButton title="Асортимент" onClick={() => {}} />
-                        <NavigationButton title="Про нас" onClick={() => {}} />
-                    </div>
-                </div>
-                <div className={styles.orderNavigation}>
-                    <NavigationButton title="Власне замовлення" onClick={() => {}} />
-                    <NavigationButton title="Кошик" onClick={() => {}} />
-                </div>
-            </div>
+				<div className={styles.pageNavigation}>
+					<NavigationButton
+						variant="big"
+						title="Home Cake"
+						onClick={() => {
+							document
+								.getElementById("header")
+								?.scrollIntoView({
+									behavior: "smooth",
+									block: "center",
+								})
+						}}
+					/>
+					<div className={styles.navigationLinks}>
+						<NavigationButton
+							title="Новинки"
+							onClick={() => {
+								document
+									.getElementById("newProductsBlock")
+									?.scrollIntoView({
+										behavior: "smooth",
+										block: "center",
+									})
+							}}
+						/>
+						<NavigationButton
+							title="Наші переваги"
+							onClick={() => {
+								document
+									.getElementById("usBenefitsBlock")
+									?.scrollIntoView({
+										behavior: "smooth",
+										block: "center",
+									})
+							}}
+						/>
+						<NavigationButton
+							title="Асортимент"
+							onClick={() => {
+								document
+									.getElementById("assortmentBlock")
+									?.scrollIntoView({
+										behavior: "smooth",
+										block: "center",
+									})
+							}}
+						/>
+						<NavigationButton
+							title="Про нас"
+							onClick={() => {
+								document
+									.getElementById("aboutUsBlock")
+									?.scrollIntoView({
+										behavior: "smooth",
+										block: "center",
+									})
+							}}
+						/>
+					</div>
+				</div>
+				<div className={styles.orderNavigation}>
+					<NavigationButton
+						title="Власне замовлення"
+						onClick={() => {}}
+					/>
+					<NavigationButton title="Кошик" onClick={() => {}} />
+				</div>
+			</div>
 
 			<div className={styles.logoBlock}>
-                <img src="/assets/images/logo.png" alt="Logo" className={styles.logo} />
-                <p className={styles.logoText}>Home Cake</p>
-            </div>
+				<img
+					src="/assets/images/logo.png"
+					alt="Logo"
+					className={styles.logo}
+				/>
+				<p className={styles.logoText}>Home Cake</p>
+			</div>
 		</div>
 	)
 }

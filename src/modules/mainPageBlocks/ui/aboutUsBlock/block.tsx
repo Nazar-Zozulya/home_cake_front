@@ -2,7 +2,7 @@ import styles from './block.module.css'
 
 export function AboutUsBlock() {
     return (
-        <div className={styles.container}>
+        <div className={styles.container} id="aboutUsBlock">
             <img src="assets/images/aboutUs.jpg" className={styles.bg} alt="" />
             <div className={styles.content}>
                 <img src="/assets/images/aboutUsAvatar.png" className={styles.avatar} alt="" />
