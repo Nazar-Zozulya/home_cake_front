@@ -1,36 +1,68 @@
-import { create } from "zustand"
-import { cartItem } from "../types/cartItem"
+import { create } from "zustand";
+import { CartItem } from "../types/cartItem";
 
 interface CartStoreTypes {
-	cartItems: cartItem[]
-	addToCart: (id: number) => void
-	isInCart: (id: number) => boolean
-	removeFromCart: (id: number) => void
-	clearCart: () => void
+	cartItems: CartItem[] | null;
+	setCartItems: (cartItems: CartItem[]) => void;
+	addToCart: (id: number) => void;
+	isInCart: (id: number) => boolean;
+	removeFromCart: (id: number) => void;
+	clearCart: () => void;
+	incrementCount: (id: number) => void;
+	decrementCount: (id: number) => void;
 }
 
 export const useCartStore = create<CartStoreTypes>()((set, get) => ({
-	cartItems: [],
-	addToCart: (id) => {
-		set((state) => ({ cartItems: [...state.cartItems, { id, count: 1 }] }))
-		console.log("add:",get().cartItems)
-	},
-	isInCart: (id) => {
-		const result = get().cartItems.some((product) => {
-			return product.id === id
-		})
-        console.log(result)
-		return result
-	},
-	removeFromCart: (id) => {
-		const newCart = get().cartItems.filter((product) => {
-			return product.id !== id
-		})
+	cartItems: null,
 
-		set(() => ({ cartItems: newCart }))
-        console.log("remove:",get().cartItems)
+	setCartItems: (cartItems) => {
+		set({ cartItems });
 	},
+
+	addToCart: (id) => {
+		const items = get().cartItems ?? [];
+		const exists = items.some((item) => item.id === id);
+
+		if (exists) {
+			const updatedCart = items.map((item) =>
+				item.id === id ? { ...item, count: item.count + 1 } : item
+			);
+			set({ cartItems: updatedCart });
+		} else {
+			set({ cartItems: [...items, { id, count: 1 }] });
+		}
+	},
+
+	isInCart: (id) => {
+		const items = get().cartItems ?? [];
+		return items.some((item) => item.id === id);
+	},
+
+	removeFromCart: (id) => {
+		const items = get().cartItems ?? [];
+		const newCart = items.filter((item) => item.id !== id);
+		set({ cartItems: newCart });
+	},
+
 	clearCart: () => {
-		set(() => ({ cartItems: [] }))
+		set({ cartItems: [] });
 	},
-}))
+
+	incrementCount: (id) => {
+		const items = get().cartItems ?? [];
+		const updatedCart = items.map((item) =>
+			item.id === id ? { ...item, count: item.count + 1 } : item
+		);
+		set({ cartItems: updatedCart });
+	},
+
+	decrementCount: (id) => {
+		const items = get().cartItems ?? [];
+		const updatedCart = items
+			.map((item) =>
+				item.id === id ? { ...item, count: item.count - 1 } : item
+			)
+			.filter((item) => item.count > 0);
+		set({ cartItems: updatedCart });
+	},
+}));

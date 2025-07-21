@@ -1,0 +1,1 @@
+export { CartProductCard } from './card'

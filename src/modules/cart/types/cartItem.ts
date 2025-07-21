@@ -1,4 +1,4 @@
-export interface cartItem {
+export interface CartItem {
     id: number
     count: number
 }
