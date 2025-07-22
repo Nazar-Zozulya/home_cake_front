@@ -10,8 +10,8 @@ export function AddToCartButton({ id }: Props) {
 	const removeFromCart = useCartStore((state) => state.removeFromCart)
 
 	return (
-		<button className={styles.button} onClick={() => !isInCart(id) ? addToCart(id) : removeFromCart(id)}>
-			<CartIcon width={40} height={40} fill="#000" />
+		<button className={`${styles.button} ${isInCart(id) ? styles.active : undefined}`} onClick={() => !isInCart(id) ? addToCart(id) : removeFromCart(id)}>
+			<CartIcon width={40} height={40} />
 		</button>
 	)
 }

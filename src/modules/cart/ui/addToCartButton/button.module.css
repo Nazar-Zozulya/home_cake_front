@@ -1,15 +1,30 @@
 .button {
 	display: flex;
-	/* flex-direction: row; */
 	justify-content: center;
 	align-items: center;
-	/* align-items: center; */
 	background: linear-gradient(178.24deg, #ffdcab -28.71%, #ffb34e 125.21%);
 	border-radius: 7px;
 	padding: 2px;
 	border: none;
+	cursor: pointer;
 }
 
 .button:hover {
 	background: linear-gradient(178.24deg, #ffe8c7 -28.71%, #ffc67b 125.21%);
+}
+
+.active {
+	background: linear-gradient(
+		178.24deg,
+		rgba(148, 148, 148, 0.7) -28.71%,
+		rgba(77, 77, 77, 0.7) 125.21%
+	);
+}
+
+.active:hover {
+	background: linear-gradient(
+		178.24deg,
+		rgba(148, 148, 148, 0.8) -28.71%,
+		rgba(77, 77, 77, 0.8) 125.21%
+	);
 }

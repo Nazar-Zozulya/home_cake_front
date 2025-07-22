@@ -63,8 +63,8 @@
 	height: 40px;
 	background: linear-gradient(168.5deg, #e8e8e8 -18%, #c6c4c4 136.97%);
 	border-radius: 5px;
-    border: none;
-    cursor: pointer;
+	border: none;
+	cursor: pointer;
 }
 
 .continueShopping:hover {
@@ -114,8 +114,8 @@
 	height: 50px;
 	background: linear-gradient(178.24deg, #ffdcab -28.71%, #ffb34e 125.21%);
 	border-radius: 5px;
-    border: none;
-    cursor: pointer;
+	border: none;
+	cursor: pointer;
 }
 
 .buyButton:hover {
@@ -130,4 +130,33 @@
 	text-align: center;
 	color: #ffffff;
 	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.deleteAll {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	background: linear-gradient(168.5deg, #e8e8e8 -18%, #c6c4c4 136.97%);
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.deleteAll:hover {
+	background: linear-gradient(178.24deg, #f2f2f2 -28.71%, #dadada 125.21%);
+}
+
+.deleteAll:hover svg {
+	stroke: #4096e3;
+}
+
+.buttonsHepler {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-start;
+	gap: 5px;
+	height: 40px;
 }

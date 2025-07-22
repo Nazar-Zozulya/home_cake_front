@@ -1,5 +1,5 @@
 export interface INavigationButtonProps {
     title: string
-    onClick: () => void
+    onClick?: () => void
     variant?: "big" | "small"
 }

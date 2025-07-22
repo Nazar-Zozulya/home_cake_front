@@ -5,6 +5,7 @@
 	align-items: center;
 	padding: 5px;
 	width: 775px;
+	position: relative;
     gap: 10px;
 	/* height: 197px; */
 	background: #fffefc;
@@ -118,4 +119,22 @@
 	font-size: 24px;
 	text-align: center;
 	color: #000000;
+}
+
+.trashIcon {
+	border: none;
+	background: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 7px;
+	cursor: pointer;
+	z-index: 10000;
+}
+
+.trashIcon:hover svg {
+	stroke: #ff5c4a;
 }

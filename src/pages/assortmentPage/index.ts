@@ -1,0 +1,1 @@
+export { AssortmentPage } from './page'

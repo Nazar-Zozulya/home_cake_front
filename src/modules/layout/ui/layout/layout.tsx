@@ -4,13 +4,17 @@ import { Header } from "../header"
 import styles from "./layout.module.css"
 import { CartModal } from "../../../cart/ui/cartModal"
 import { useModalManagerStore } from "../../../../store"
+import { LayoutProps } from "./layout.types"
+import { SmallHeader } from "../smallHeader"
 
-export function Layout() {
+export function Layout(props: LayoutProps) {
 	const activeModal = useModalManagerStore((state) => state.activeModal)
-
+	const { variant = 'default' } = props
 	return (
 		<div className={styles.container}>
-			<Header />
+			{ variant === 'default' && <Header /> }
+			{ variant === 'small' && <SmallHeader /> }
+
 
 			<div className={styles.main}>
 				<Outlet />

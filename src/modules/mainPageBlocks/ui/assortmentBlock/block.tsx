@@ -1,11 +1,18 @@
+import { useEffect, useState } from "react"
 import { ProductCard } from "../../../../components/productCard"
 import { Product, useProductContext } from "../../../product"
 import styles from "./block.module.css"
 import { sampleSize } from "lodash"
+import { Link } from "react-router-dom"
 
 export function AssortmentBlock() {
 	const { products } = useProductContext()
-	const randomProducts: Product[] = sampleSize(products, 3)
+
+	const [randomProducts, setRandomProducts] = useState<Product[]>([])
+
+	useEffect(() => {
+		setRandomProducts(sampleSize(products, 3))
+	}, [products])
 
 	return (
 		<div className={styles.container} id="assortmentBlock">
@@ -18,20 +25,13 @@ export function AssortmentBlock() {
 
 			<div className={styles.productsList}>
 				{randomProducts.map((product) => (
-					<ProductCard
-						key={product.id}
-						id={product.id}
-						image={product.image}
-						name={product.name}
-						price={product.price}
-						composition={product.composition}
-						weight={product.weight}
-						kilocalories={product.kilocalories}
-					/>
+					<ProductCard {...product} />
 				))}
 			</div>
 
-			<button className={styles.showAll}>Показати всі</button>
+			<Link to={"/all"}>
+				<button className={styles.showAll}>Показати всі</button>
+			</Link>
 		</div>
 	)
 }

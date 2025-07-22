@@ -13,14 +13,7 @@ export function NewProductsBlock() {
 				{ products.slice(-3).reverse().map((product) => {
 					return (
 						<ProductCard
-							key={product.id}
-							id={product.id}
-							image={product.image}
-							name={product.name}
-							price={product.price}
-							composition={product.composition}
-							weight={product.weight}
-							kilocalories={product.kilocalories}
+						{...product}
 						/>
 					)
 				})}
