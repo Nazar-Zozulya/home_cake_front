@@ -4,6 +4,7 @@ import { Modal } from "../../../../components/modal";
 import { cartProductsToProducts } from "../../../../helpers";
 import { useModalManagerStore } from "../../../../store";
 import { TrashIcon } from "../../../../ui/icons";
+import { OrangeButton } from "../../../../ui/orangeButton";
 import { useProductContext } from "../../../product";
 import { useCartStore } from "../../store/useCartStore";
 import { CartProductCard } from "../cartProductCard";
@@ -43,7 +44,7 @@ export function CartModal() {
                     </div>
                     <div className={styles.totalSumBlock}>
                         <div className={styles.totalSumText}>10000 $</div>
-                        <button className={styles.buyButton}><p className={styles.buyButtonText}>Замовити</p></button>
+                        <OrangeButton onClick={() => {}} label="Замовити" />
                     </div>
                 </div>
             </div>

@@ -1,0 +1,25 @@
+.button {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 180px;
+	height: 50px;
+	background: linear-gradient(178.24deg, #ffdcab -28.71%, #ffb34e 125.21%);
+	border-radius: 5px;
+	border: none;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: linear-gradient(178.24deg, #ffe8c7 -28.71%, #ffc67b 125.21%);
+}
+
+.label {
+	font-family: "M PLUS 1p";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 28px;
+	text-align: center;
+	color: #ffffff;
+	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}

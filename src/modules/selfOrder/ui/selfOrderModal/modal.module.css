@@ -1,0 +1,53 @@
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	width: 800px;
+	background: #ffffff;
+	border-radius: 25px;
+}
+
+.header {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 15px;
+	width: 100%;
+	height: 70px;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.title {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 40px;
+	line-height: 50px;
+	text-align: center;
+	color: #000000;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	align-items: center;
+	padding: 25px 15px 15px;
+	gap: 43px;
+	width: 100%;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.inputsHelper {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-end;
+	gap: 15px;
+	width: 780px;
+}
+
+

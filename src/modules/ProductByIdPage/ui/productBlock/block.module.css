@@ -6,6 +6,7 @@
 	padding: 30px;
 	gap: 10px;
 	/* width: 100%; */
+	position: relative;
 }
 
 .name {
@@ -107,4 +108,11 @@
 	font-size: 28px;
 	color: #0f0202;
     text-align: start;
+}
+
+.BG {
+	position: absolute; 
+	top: 0;
+	width: 100vw;
+	z-index: -1;
 }

@@ -20,6 +20,7 @@ export function ProductBlock() {
 
     return (
         <div className={styles.container}>
+            <img src="/assets/images/newProducts.jpg" alt="" className={styles.BG} />
             <p className={styles.name}>{product.name}</p>
             <div className={styles.content}>
                 <img src={product.image} alt="" className={styles.image} />

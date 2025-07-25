@@ -4,7 +4,7 @@ import styles from "./header.module.css"
 import { useModalManagerStore } from "../../../../store"
 
 export function SmallHeader() {
-    const { openModal }  = useModalManagerStore()
+	const { openModal } = useModalManagerStore()
 
 	return (
 		<div className={styles.container}>
@@ -15,7 +15,9 @@ export function SmallHeader() {
 			<div className={styles.orderNavigation}>
 				<NavigationButton
 					title="Власне замовлення"
-					onClick={() => {}}
+					onClick={() => {
+						openModal("selfOrder")
+					}}
 				/>
 				<NavigationButton
 					title="Кошик"

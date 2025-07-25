@@ -1,0 +1,24 @@
+.input {
+	box-sizing: border-box;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	width: 390px;
+	height: 30px;
+	background: #ffffff;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	font-family: "Jura";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 26px;
+	text-align: flex-start;
+	color: rgba(0, 0, 0);
+} 
+
+
+.big {
+	width: 780px !important;
+}

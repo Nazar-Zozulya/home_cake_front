@@ -6,6 +6,8 @@ import { CartModal } from "../../../cart/ui/cartModal"
 import { useModalManagerStore } from "../../../../store"
 import { LayoutProps } from "./layout.types"
 import { SmallHeader } from "../smallHeader"
+import { SelfOrderModal } from "../../../selfOrder"
+import { OrderModal } from "../../../cart"
 
 export function Layout(props: LayoutProps) {
 	const activeModal = useModalManagerStore((state) => state.activeModal)
@@ -24,9 +26,9 @@ export function Layout(props: LayoutProps) {
 
 
 			{activeModal === 'cart' && <CartModal />}
-            {/* {activeModal === 'selfOrder' && <SelfOrderModal />}
+            {activeModal === 'selfOrder' && <SelfOrderModal />}
             {activeModal === 'order' && <OrderModal />}
-            {activeModal === 'verify' && <SuccessModal />}
+            {/* {activeModal === 'verify' && <SuccessModal />}
             {activeModal === 'error' && <ErrorModal />} */}
 		</div>
 	)

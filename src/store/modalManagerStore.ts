@@ -12,7 +12,7 @@ interface ModalManagerStoreTypes {
 }
 
 export const useModalManagerStore = create<ModalManagerStoreTypes>((set) => ({
-    activeModal: null,
+    activeModal: 'order',
     openModal: (modal) => set({ activeModal: modal }),
     closeModal: () => set({ activeModal: null }),
     switchModal: (modal) => set({ activeModal: modal }),

@@ -5,7 +5,6 @@ import { useCartStore } from "../../../cart"
 import { useModalManagerStore } from "../../../../store"
 
 export function Header() {
-
 	const openModal = useModalManagerStore((state) => state.openModal)
 
 	return (
@@ -17,12 +16,10 @@ export function Header() {
 						variant="big"
 						title="Home Cake"
 						onClick={() => {
-							document
-								.getElementById("header")
-								?.scrollIntoView({
-									behavior: "smooth",
-									block: "center",
-								})
+							document.getElementById("header")?.scrollIntoView({
+								behavior: "smooth",
+								block: "center",
+							})
 						}}
 					/>
 					<div className={styles.navigationLinks}>
@@ -75,9 +72,16 @@ export function Header() {
 				<div className={styles.orderNavigation}>
 					<NavigationButton
 						title="Власне замовлення"
-						onClick={() => {}}
+						onClick={() => {
+							openModal("selfOrder")
+						}}
 					/>
-					<NavigationButton title="Кошик" onClick={() => {openModal("cart")}} />
+					<NavigationButton
+						title="Кошик"
+						onClick={() => {
+							openModal("cart")
+						}}
+					/>
 				</div>
 			</div>
 
