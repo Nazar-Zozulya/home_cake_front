@@ -1,11 +1,12 @@
 
 import { CloseModalButton } from "../../../../components/closeModalButton";
 import { Modal } from "../../../../components/modal";
-import { cartProductsToProducts } from "../../../../helpers";
 import { useModalManagerStore } from "../../../../store";
 import { TrashIcon } from "../../../../ui/icons";
 import { OrangeButton } from "../../../../ui/orangeButton";
 import { useProductContext } from "../../../product";
+import { cartProductsToProducts } from "../../helpers";
+import { totalCartSum } from "../../helpers/totalSum";
 import { useCartStore } from "../../store/useCartStore";
 import { CartProductCard } from "../cartProductCard";
 import styles from './modal.module.css'
@@ -17,6 +18,8 @@ export function CartModal() {
     const closeModal = useModalManagerStore((state) => state.closeModal)
     const { cartItems, clearCart } = useCartStore()
     const { products } = useProductContext()
+    const cartProducts = cartProductsToProducts(cartItems ?? [], products)
+    const totalSum = totalCartSum(cartProducts ?? [])
 
     return (
         <Modal>
@@ -26,16 +29,11 @@ export function CartModal() {
                     <CloseModalButton />
                 </div>
                 <div className={styles.content}>
-                    { cartProductsToProducts(cartItems ?? [], products).map((p)=> {
+                    { cartProducts.map((p)=> {
                         return(
                             <CartProductCard key={p.id} id={p.id} name={p.name} price={p.price} composition={p.composition} image={p.image} count={p.count} />
                         )
                     }) }
-                    {/* { cartItems.map((item) => {
-                        return(
-                            <div>{item.id} {item.count}</div>
-                        )
-                    }) } */}
                 </div>
                 <div className={styles.footer}>
                     <div className={styles.buttonsHepler}>
@@ -43,7 +41,7 @@ export function CartModal() {
                         <button className={styles.deleteAll} onClick={() => clearCart()}><TrashIcon width={25} height={25} stroke="#3E77BB" strokeWidth={2} /></button>
                     </div>
                     <div className={styles.totalSumBlock}>
-                        <div className={styles.totalSumText}>10000 $</div>
+                        <div className={styles.totalSumText}>{totalSum} грн</div>
                         <OrangeButton onClick={() => {}} label="Замовити" />
                     </div>
                 </div>

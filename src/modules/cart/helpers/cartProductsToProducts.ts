@@ -1,5 +1,5 @@
-import { CartItem } from "../modules/cart";
-import { Product } from "../modules/product";
+import { CartItem } from "..";
+import { Product } from "../../product";
 
 
 

@@ -3,7 +3,7 @@ import { AddToCartButton } from "../../../cart"
 import { Product } from "../../../product/types/product"
 import styles from "./block.module.css"
 import { useProductContext } from "../../../product/context/productContext"
-import { getProductById } from "../../../../helpers"
+import { getProductById } from "../../../product/helpers"
 
 
 

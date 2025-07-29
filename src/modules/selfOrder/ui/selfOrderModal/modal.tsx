@@ -1,36 +1,96 @@
-import { CloseModalButton } from "../../../../components/closeModalButton";
-import { Modal } from "../../../../components/modal";
-import { Input } from "../../../../ui/input";
-import { OrangeButton } from "../../../../ui/orangeButton";
-import styles from './modal.module.css'
-
-
-
-
+import { Controller, useForm } from "react-hook-form"
+import { CloseModalButton } from "../../../../components/closeModalButton"
+import { Modal } from "../../../../components/modal"
+import { Input } from "../../../../ui/input"
+import { OrangeButton } from "../../../../ui/orangeButton"
+import styles from "./modal.module.css"
+import { SelfOrderForm } from "./modal.types"
+import { SendSelfOrder } from "../../api/sendSelfOrder"
 
 export function SelfOrderModal() {
-    return <Modal>
-        <div className={styles.container}>
-            <div className={styles.header}>
-                <p className={styles.title}>Подати заявку?</p>
-                <CloseModalButton />
-            </div>
-            <div className={styles.content}>
-                <div className={styles.inputsHelper}>
-                    <Input placeholder="Ім'я" />
-                    <Input placeholder="Прізвище" />
-                </div>
-                <div className={styles.inputsHelper}>
-                    <Input placeholder="Телефон" />
-                    <Input placeholder="Пошта" />
-                </div>
-                <Input placeholder="Опишіть ваще побажання" variant="big" />
+	const { control, formState, handleSubmit } = useForm<SelfOrderForm>({
+		defaultValues: {
+			name: "",
+			surname: "",
+			phone: "",
+			email: "",
+			descriptionOrder: "",
+		},
+	})
 
-                <OrangeButton onClick={() => {}} label="Замовити" />
-            </div>
-            {/* <div className={styles.footer}>
+	function onSubmit(data: SelfOrderForm) {
+		console.log(data)
 
-            </div> */}
-        </div>
-    </Modal>
+		const sendOrder = SendSelfOrder(
+			{
+				name: data.name,
+				surname: data.surname,
+				phone: data.phone,
+				email: data.email,
+			},
+			data.descriptionOrder
+		)
+	}
+
+	return (
+		<Modal>
+			<div className={styles.container}>
+				<form onSubmit={handleSubmit(onSubmit)}>
+					<div className={styles.header}>
+						<p className={styles.title}>Подати заявку?</p>
+						<CloseModalButton />
+					</div>
+					<div className={styles.content}>
+						<div className={styles.inputsHelper}>
+							<Controller
+								control={control}
+								name="name"
+								render={({ field }) => (
+									<Input placeholder="Ім'я" {...field} />
+								)}
+							/>
+							<Controller
+								control={control}
+								name="surname"
+								render={({ field }) => (
+									<Input placeholder="Прізвище" {...field} />
+								)}
+							/>
+						</div>
+						<div className={styles.inputsHelper}>
+							<Controller
+								control={control}
+								name="phone"
+								render={({ field }) => (
+									<Input placeholder="Телефон" {...field} />
+								)}
+							/>
+							<Controller
+								control={control}
+								name="email"
+								render={({ field }) => (
+									<Input placeholder="Пошта" {...field} />
+								)}
+							/>
+						</div>
+
+						<Controller
+							control={control}
+							name="descriptionOrder"
+							render={({ field }) => (
+								<Input.textarea
+									placeholder="Опишіть ваще побажання"
+									variant="big"
+									type="textarea"
+									{...field}
+								/>
+							)}
+						/>
+
+						<OrangeButton onClick={() => {}} label="Замовити" />
+					</div>
+				</form>
+			</div>
+		</Modal>
+	)
 }

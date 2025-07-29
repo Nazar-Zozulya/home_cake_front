@@ -3,6 +3,7 @@ import { CloseModalButton } from "../../../../components/closeModalButton"
 import { Modal } from "../../../../components/modal"
 import { Input } from "../../../../ui/input"
 import styles from "./modal.module.css"
+import { OrangeButton } from "../../../../ui/orangeButton"
 
 export function OrderModal() {
 	const [delivaryVariant, setDelivaryVariant] = useState<string>("Самовивіз")
@@ -48,7 +49,15 @@ export function OrderModal() {
 								}
 								onClick={() => PickUpRadio.current?.click()}
 							></span>
-							<label>Самовивіз</label>
+							<label
+								className={
+									delivaryVariant === "Самовивіз"
+										? styles.currentLabel
+										: styles.delivaryLabel
+								}
+							>
+								Самовивіз
+							</label>
 						</div>
 
 						<div
@@ -73,17 +82,28 @@ export function OrderModal() {
 								}
 								onClick={() => PickUpRadio.current?.click()}
 							></span>
-							<label>Доставка</label>
+							<label
+								className={
+									delivaryVariant === "Доставка"
+										? styles.currentLabel
+										: styles.delivaryLabel
+								}
+							>
+								Доставка
+							</label>
 						</div>
+						{delivaryVariant === "Доставка" ? (
+							<div className={styles.delivaryBlock}>
+								<Input variant="big" placeholder="Адреса" />
+								<Input placeholder="Дата" />
+								<Input placeholder="Час" />
+							</div>
+						) : undefined}
 					</div>
 
-					{delivaryVariant === "Доставка" ? (
-						<div className={styles.delivaryBlock}>
-							<Input placeholder="Адреса" />
-							<Input placeholder="Дата" />
-							<Input placeholder="Час" />
-						</div>
-					) : undefined}
+					<div className={styles.orangeButtonBlock}>
+						<OrangeButton onClick={() => {}} label="Замовити" />
+					</div>
 				</div>
 			</div>
 		</Modal>

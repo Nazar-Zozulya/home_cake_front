@@ -21,4 +21,6 @@
 
 .big {
 	width: 780px !important;
+	min-height: 30px !important;
+	height: auto !important;
 }

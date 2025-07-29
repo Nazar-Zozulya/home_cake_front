@@ -11,7 +11,6 @@ export default function App() {
 		const newCartItems = localStorage.getItem("cart")
 
 		if (!newCartItems) return
-		console.log("penis", newCartItems)
 
 		const parsedCart: CartItem[] = JSON.parse(newCartItems)
 

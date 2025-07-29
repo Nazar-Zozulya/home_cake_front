@@ -1,4 +1,4 @@
-import { ProductCard } from "../../../../components/productCard"
+import { ProductCard } from "../../../product/ui/productCard"
 import { useProductContext } from "../../../product"
 import styles from "./list.module.css"
 

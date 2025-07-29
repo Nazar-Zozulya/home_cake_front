@@ -1,4 +1,4 @@
-import { Product } from "../modules/product"
+import { Product } from "../types/product"
 
 export function getProductById(products: Product[], id: number): Product | undefined {
 	const currentProduct = products.find((p) => {

@@ -26,7 +26,7 @@ export function CartProductCard(
 						<p className={styles.count}>{props.count}</p>
 					</div>
 					<button className={styles.incrementButton} onClick={() => incrementCount(props.id)}>+</button>
-					<p className={styles.price}>{props.price * props.count}</p>
+					<p className={styles.price}>{props.price * props.count} грн</p>
 				</div>
 			</div>
 		</div>

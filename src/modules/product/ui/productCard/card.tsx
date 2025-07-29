@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import { AddToCartButton } from "../../modules/cart"
-import { Product } from "../../modules/product"
+import { AddToCartButton } from "../../../cart"
+import { Product } from "../.."
 // import { AddToCartButton } from '../addToCartButton';
 import styles from "./card.module.css"
 

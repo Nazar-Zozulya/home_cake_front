@@ -1,5 +1,5 @@
 export interface InputProps {
     placeholder: string
-    type?: "text" | "password"
+    type?: "text" | "password" | "textarea"
     variant?: "default" | "big"
 }

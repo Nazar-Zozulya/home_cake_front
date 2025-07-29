@@ -7,3 +7,7 @@ export interface Product{
     weight: number;
     kilocalories: number;
 }
+
+export interface ProductWithCount extends Product {
+    count:number
+}

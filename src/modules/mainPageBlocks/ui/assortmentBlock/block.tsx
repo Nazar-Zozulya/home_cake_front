@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { ProductCard } from "../../../../components/productCard"
+import { ProductCard } from "../../../product/ui/productCard"
 import { Product, useProductContext } from "../../../product"
 import styles from "./block.module.css"
 import { sampleSize } from "lodash"

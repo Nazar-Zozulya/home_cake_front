@@ -2,7 +2,7 @@ import { InputProps } from "./input.types"
 import styles from "./input.module.css"
 
 export function Input(props: InputProps) {
-	const { placeholder, type = "text", variant = "default" } = props
+	const { placeholder, type = "text", variant = "default", ...rest } = props
 
 	return (
 		<input
@@ -11,6 +11,24 @@ export function Input(props: InputProps) {
 			className={`${styles.input} ${
 				variant === "big" ? styles.big : undefined
 			}`}
+			{...rest}
 		></input>
 	)
 }
+
+
+function TextArea(props: InputProps) {
+	const { placeholder, type = "text", variant = "default", ...rest } = props
+
+	return (
+		<textarea
+			placeholder={placeholder}
+			className={`${styles.input} ${
+				variant === "big" ? styles.big : undefined
+			}`}
+			{...rest}
+		></textarea>
+	)
+}
+
+Input.textarea = TextArea

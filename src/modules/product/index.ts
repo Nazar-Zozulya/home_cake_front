@@ -1,2 +1,3 @@
-export { type Product } from './types/product'
+export { type Product, type ProductWithCount } from './types/product'
 export { ProductContextProvider, useProductContext } from './context/productContext'
+export { ProductCard } from './ui/productCard'
