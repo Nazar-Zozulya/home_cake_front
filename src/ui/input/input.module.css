@@ -16,8 +16,11 @@
 	font-size: 26px;
 	text-align: flex-start;
 	color: rgba(0, 0, 0);
-} 
+}
 
+.textarea {
+	border-top: 1px solid rgba(0, 0, 0, 0.6);
+}
 
 .big {
 	width: 780px !important;

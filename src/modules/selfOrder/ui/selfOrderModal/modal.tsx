@@ -5,7 +5,7 @@ import { Input } from "../../../../ui/input"
 import { OrangeButton } from "../../../../ui/orangeButton"
 import styles from "./modal.module.css"
 import { SelfOrderForm } from "./modal.types"
-import { SendSelfOrder } from "../../api/sendSelfOrder"
+import { SendSelfOrder } from "../../hooks/useSendSelfOrder"
 
 export function SelfOrderModal() {
 	const { control, formState, handleSubmit } = useForm<SelfOrderForm>({

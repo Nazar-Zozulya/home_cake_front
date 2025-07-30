@@ -22,8 +22,9 @@ function TextArea(props: InputProps) {
 
 	return (
 		<textarea
+		rows={3}
 			placeholder={placeholder}
-			className={`${styles.input} ${
+			className={`${styles.input} ${styles.textarea} ${
 				variant === "big" ? styles.big : undefined
 			}`}
 			{...rest}

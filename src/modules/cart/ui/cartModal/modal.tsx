@@ -15,9 +15,9 @@ import styles from './modal.module.css'
 
 
 export function CartModal() {
-    const closeModal = useModalManagerStore((state) => state.closeModal)
     const { cartItems, clearCart } = useCartStore()
     const { products } = useProductContext()
+    const { closeModal, switchModal } = useModalManagerStore()
     const cartProducts = cartProductsToProducts(cartItems ?? [], products)
     const totalSum = totalCartSum(cartProducts ?? [])
 
@@ -42,7 +42,7 @@ export function CartModal() {
                     </div>
                     <div className={styles.totalSumBlock}>
                         <div className={styles.totalSumText}>{totalSum} грн</div>
-                        <OrangeButton onClick={() => {}} label="Замовити" />
+                        <OrangeButton onClick={() => {switchModal("order")}} label="Замовити" />
                     </div>
                 </div>
             </div>
