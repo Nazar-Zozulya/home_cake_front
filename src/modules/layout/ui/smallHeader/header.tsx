@@ -8,7 +8,12 @@ export function SmallHeader() {
 
 	return (
 		<div className={styles.container}>
-			<Link to={"/"}>
+			<Link
+				to={"/"}
+				onClick={() => {
+					window.scrollTo({ top: 100, behavior: "smooth" })
+				}}
+			>
 				<NavigationButton variant="big" title="Home Cake" />
 			</Link>
 

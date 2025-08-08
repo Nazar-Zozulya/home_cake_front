@@ -6,7 +6,7 @@
 	/* padding: 120px 0px; */
 	isolation: isolate;
 	width: 100%;
-	height: 800px;
+	height: 100vh;
     overflow: hidden;
     position: relative
 }

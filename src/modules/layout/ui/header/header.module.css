@@ -89,3 +89,38 @@
 	/* text-fill-color: transparent; */
 	text-shadow: 0px 0px 5px rgba(184, 158, 75, 0.6);
 }
+/* 
+.cartButtonWithItems{
+	background: linear-gradient(101.41deg, #ee9b9b 7.84%, #e40606 102.88%);
+	background-clip: text;
+	text-shadow: 0px 0px 5px rgba(184, 75, 75, 0.6);
+} */
+
+
+.cartHelper {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: flex-end;
+	padding-right: 10px;
+	padding-top: 10px;
+}
+
+.cartCounter {
+	font-family: "Lobster";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 18px;
+	background: linear-gradient(101.41deg, #de9b9b 7.84%, #eb4242 102.88%);
+	position: absolute;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	text-align: start;
+	top: 0;
+	right: 0;
+	margin-left: 100px;
+	margin-bottom: 10px;
+	background-clip: text;
+	text-shadow: 0px 0px 5px rgba(184, 75, 75, 0.6);
+}

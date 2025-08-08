@@ -2,12 +2,13 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 	padding: 0px;
 	isolation: isolate;
 	width: 100%;
-	gap: 20px;
+	gap: 60px;
 	padding-top: 80px;
-
+	height: 100vh;
 }
 
 .bg {
@@ -21,7 +22,7 @@
 	font-family: "Jost";
 	font-style: normal;
 	font-weight: 700;
-	font-size: 64px;
+	font-size: 100px;
 	text-align: center;
 	color: #0f0202;
 }
