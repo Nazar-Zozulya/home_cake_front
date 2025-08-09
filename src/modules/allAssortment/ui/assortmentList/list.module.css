@@ -14,3 +14,14 @@
 	background-size: 100% 1000px;
 	background-repeat: repeat-y;
 }
+
+
+.returnToAss {
+	background: white;
+	height: 60px;
+	position: absolute;
+	top: 100px;
+	left: 0;
+	border: 1px 0 1px 1px solid #000;
+	border-radius: 0 0 10px 10px;
+}

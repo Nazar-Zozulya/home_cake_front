@@ -6,6 +6,9 @@ export function AssortmentList() {
 	const { products } = useProductContext()
 	return (
 		<div className={styles.list}>
+			<div className={styles.returnToAss}>
+				<button>Назад в асортимент</button>
+			</div>
 			{products.map((p) => {
 				return products.map((p) => {
 					return <ProductCard {...p} />
